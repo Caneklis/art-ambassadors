@@ -1,0 +1,38 @@
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src: url("../fonts/" + $path + ".woff2") format("woff2");
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet * 1px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: $large * 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $desktop * 1px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile * 1px) {
+    @content;
+  }
+}
+
+@mixin grid-24 {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+}

@@ -1,0 +1,135 @@
+.start {
+  min-height: 100%;
+  // @include grid-24;
+  align-items: center;
+  font-weight: 500;
+  background-color: var(--b-light-green);
+}
+
+.start__marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  // width: 100%;
+  transform: rotate(270deg) translateX(-36%) translateY(-120%);
+  width: 100vh;
+  overflow: hidden;
+
+  @media (max-width: 1023px) {
+    position: static;
+    transform: rotate(0) translateX(0) translateY(0);
+    width: 100%;
+  }
+}
+
+.start__wrapper {
+  // width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-right: 8%;
+  padding-top: 167px;
+  padding-bottom: 60px;
+  padding-left: 420px;
+
+  @media (max-width: 1023px) {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 50px;
+  }
+}
+
+.start__logo,
+.start__text {
+  // grid-column: 5 / span 15;
+  // max-width: 1200px;
+}
+
+.start__text {
+  line-height: 140%;
+  color: #000000;
+  font-size: clamp(pxToRem(14px), 2vw + 1rem, pxToRem(48px));
+
+  p {
+    margin: 0;
+    margin-bottom: 55px;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.start__logo {
+  img {
+    display: block;
+    width: 100%;
+    max-width: 1151px;
+    height: auto;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 55px;
+  }
+}
+
+.start__info {
+  display: flex;
+  flex-wrap: wrap;
+  // grid-column: 5 / span 18;
+  // max-width: 1370psx;
+  margin-top: 150px;
+
+  p {
+    display: flex;
+    margin: 0;
+    margin-right: 4%;
+    padding-right: 4%;
+    // font-size: 18px;
+    font-size: clamp(12px, 1vw + 1rem, 18px);
+
+    color: #98aea6;
+    position: relative;
+
+    @media (max-width: 767px) {
+      margin-bottom: 6px;
+      font-size: 13px;
+      line-height: 16px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "a";
+      color: #000000;
+      position: absolute;
+      right: 0;
+    }
+
+    &:last-child {
+      margin: 0;
+      padding: 0;
+      color: #000000;
+
+      &::after {
+        content: "";
+      }
+
+      @media (max-width: 767px) {
+        &:last-child {
+          color: #98aea6;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}

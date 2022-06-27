@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Primary Meta Tags -->
+  <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+  <meta type="description" content="{% if description %}{{ description }}{% else %}Description{% endif %}">
+  <link rel="stylesheet" media="all" href="css/style.min.css" />
+  {# {% include "../_partials/_media-tags.html" %} #}
+  <link rel="icon" href="favicon/favicon.ico"><!-- 32×32 -->
+  <link rel="icon" href="favicon/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"><!-- 180×180 -->
+  <link rel="manifest" href="favicon/manifest.webmanifest">
+</head>
+
+<body class="page__body">
+
+  <!-- BEGIN content -->
+  <main class="page__main">
+    {% block content %}{% endblock %}
+  </main>
+  <!-- END content -->
+
+  <!-- BEGIN scripts -->
+  <script src="js/libs.min.js"></script>
+  <script src="js/main.min.js"></script>
+  <!-- END scripts -->
+
+</body>
+
+</html>

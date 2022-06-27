@@ -1,0 +1,15 @@
+.page {
+  height: 100%;
+}
+
+.page__body {
+  display: grid;
+  min-height: 100%;
+  margin: 0;
+  font-family: $b-font;
+  color: var(--b-black);
+}
+
+.page__main {
+  flex-grow: 1;
+}

@@ -1,0 +1,59 @@
+.marquee__part {
+  flex-shrink: 0;
+  font-smooth: always;
+}
+
+.marquee__inner {
+  width: fit-content;
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  font-weight: 500;
+  font-size: clamp(pxToRem(14px), 8vw + 1rem, pxToRem(80px));
+  line-height: 1.4;
+  color: #4a645a;
+
+  span {
+    position: relative;
+    opacity: 0.1;
+    // display: flex;
+    // max-width: max-content;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 20px;
+      margin-left: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='17' viewBox='0 0 20 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.9726 16.0747C12.4201 16.0747 11.0959 15.5168 10 14.4008C8.90411 13.2849 8.35616 11.9412 8.35616 10.3698L8.35616 6.54369C8.35616 5.81491 8.21918 5.2 7.9452 4.69897C7.67123 4.19793 7.24886 3.94741 6.67808 3.94741C5.74201 3.94741 4.94292 4.35735 4.28082 5.17723C3.61872 5.9971 3.28767 6.94224 3.28767 8.01263C3.28767 9.85735 4.25799 11.3377 6.19863 12.4536L6.19863 16.1431C4.41781 15.4826 2.94521 14.4236 1.78082 12.966C0.593607 11.4857 -2.75255e-07 9.84597 -3.53899e-07 8.04679C-4.51458e-07 5.81491 0.753424 3.99296 2.26027 2.58096C3.76712 1.14617 5.59361 0.42878 7.73973 0.42878L19.589 0.42878L19.589 3.84493L18.1507 3.84493C19.3836 4.86977 20 6.45259 20 8.59338C20 10.7342 19.4521 12.5219 18.3562 13.9567C17.2374 15.3687 15.7763 16.0747 13.9726 16.0747ZM13.9726 12.6586C14.7717 12.6586 15.4338 12.2714 15.9589 11.4971C16.4612 10.7228 16.7123 9.75487 16.7123 8.59338C16.7123 7.22692 16.3584 6.09959 15.6507 5.21139C14.9201 4.30042 13.984 3.84493 12.8425 3.84493L10.1712 3.84493C11.153 4.39151 11.6438 5.40497 11.6438 6.8853L11.6438 10.3698C11.6438 11.0075 11.8721 11.554 12.3288 12.0095C12.7626 12.4422 13.3105 12.6586 13.9726 12.6586Z' fill='%234A645A'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transform: rotate(90deg) translate(-14px, 10px);
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 15px;
+    line-height: 30px;
+
+    &::after {
+      width: 8px;
+      height: 14px;
+      transform: rotate(90deg) translate(2px, 2px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.spacer {
+  // height: 350px;
+}
