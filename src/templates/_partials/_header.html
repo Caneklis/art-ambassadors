@@ -1,0 +1,64 @@
+<header class="header">
+  <div class="header__wrapper">
+    <a class="header__logo" href="index.html">
+      <img src="/images/logo.svg" alt="Логотип ArtAmbassadors">
+    </a>
+
+    <div class="header__user-block">
+      <a href="#" class="header__contrast">Контрастная версия</a>
+
+      <div class="header__search">
+        <button class="header__search-btn" type="button" aria-expanded="false"
+                aria-controls="search-form">Поиск</button>
+        <form class="header__search-form" action="" method="GET" id="search-form">
+          <div class="header__search-form-wrapper">
+            <input class="header__search-input" type="search" name="search" id="search" placeholder="Я ищу смысл..">
+            <button class="header__search-submit" type="submit">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <use href="/images/sprite_auto.svg#icon-search" />
+              </svg>
+              <span class="visually-hidden">Найти</span></button>
+          </div>
+        </form>
+      </div>
+
+      <div class="header__social  social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="https://vk.com/public213772398" target="_blank" rel="noopener">
+              <svg width="40" height="24" viewBox="0 0 40 24" xmlns="http://www.w3.org/2000/svg">
+                <use href="/images/sprite_auto.svg#icon-vk" />
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="" target="_blank" rel="noopener">
+              <svg width="32" height="28" viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg">
+                <use href="/images/sprite_auto.svg#icon-tg" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <button class="main-nav__toggle" aria-expanded="false" aria-controls="search-form">
+        <svg class="main-nav__icon" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <use class="main-nav__icon-menu" href="/images/sprite_auto.svg#icon-menu" />
+          <use class="main-nav__icon-cross" href="/images/sprite_auto.svg#icon-cross" />
+        </svg>
+      </button>
+      <ul class="main-nav__list" id="main-nav">
+        {% import "./_data/_nav.html" as nav %}
+        {% for item in nav.list %}
+        <li class="main-nav__item"><a
+             class="main-nav__link{% if item.modificator %}  main-nav__link--{{item.modificator}}{% endif %}"
+             href="{{item.link}}.html">{{item.title}}</a></li>
+        {% endfor %}
+        <li class="main-nav__item  main-nav__item--support"><a class="main-nav__link" href="support.html">Поддержать
+            нас</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

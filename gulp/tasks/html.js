@@ -27,7 +27,11 @@ const renderHtml = (onlyChanged) => {
     .pipe(
       nunjucksRender({
         //PRODUCTION: config.production,
-        path: "src/templates",
+        path: [
+          "src/templates",
+          "src/templates/_partials",
+          "src/templates/_layouts",
+        ],
         manageEnv: manageEnvironment,
         data: {
           base_path: "/",

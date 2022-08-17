@@ -4,7 +4,7 @@
     font-weight: $weight;
     font-style: $style;
     font-display: swap;
-    src: url("../fonts/" + $path + ".woff2") format("woff2");
+    src: url('../fonts/' + $path + '.woff2') format('woff2');
   }
 }
 
@@ -35,4 +35,32 @@
 @mixin grid-24 {
   display: grid;
   grid-template-columns: repeat(24, 1fr);
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include tablet {
+    padding-left: 3.75%;
+    padding-right: 3.75%;
+  }
+}
+
+@mixin title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: var(--s-green);
 }

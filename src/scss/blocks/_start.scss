@@ -1,5 +1,5 @@
 .start {
-  min-height: 100%;
+  min-height: 100vh;
   // @include grid-24;
   align-items: center;
   font-weight: 500;
@@ -7,12 +7,11 @@
 }
 
 .start__marquee {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-  // width: 100%;
-  transform: rotate(270deg) translateX(-36%) translateY(-120%);
+  transform: rotate(270deg) translateX(-34%) translateY(-118%);
   width: 100vh;
   overflow: hidden;
 
@@ -20,6 +19,7 @@
     position: static;
     transform: rotate(0) translateX(0) translateY(0);
     width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -48,7 +48,7 @@
 .start__text {
   line-height: 140%;
   color: #000000;
-  font-size: clamp(pxToRem(14px), 2vw + 1rem, pxToRem(48px));
+  font-size: clamp(pxToRem(14px), 2vw + 1rem, pxToRem(40px));
 
   p {
     margin: 0;
@@ -78,7 +78,7 @@
   flex-wrap: wrap;
   // grid-column: 5 / span 18;
   // max-width: 1370psx;
-  margin-top: 150px;
+  margin-top: 38px;
 
   p {
     display: flex;

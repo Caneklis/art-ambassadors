@@ -1,26 +1,26 @@
-import path from "path";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import CircularDependencyPlugin from "circular-dependency-plugin";
+import path from 'path';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 const { CircularDependencyPlugin1 } = CircularDependencyPlugin;
 
-import DuplicatePackageCheckerPlugin from "duplicate-package-checker-webpack-plugin";
+import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
 const { DuplicatePackageCheckerPlugin1 } = DuplicatePackageCheckerPlugin;
 
 const __dirname = path.resolve();
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
 export const webpackConfig = {
-  context: path.resolve(__dirname, "src"),
-  mode: "development",
+  context: path.resolve(__dirname, 'src'),
+  mode: 'development',
   entry: {
-    main: "./js/main.js",
-    libs: "./js/libs.js",
+    main: './js/main.js',
+    libs: './js/libs.js',
   },
-  devtool: isDev ? "source-map" : false,
+  devtool: isDev ? 'source-map' : false,
   output: {
-    filename: "[name].min.js",
-    path: path.resolve(__dirname, "build/js"),
+    filename: '[name].min.js',
+    path: path.resolve(__dirname, 'build/js'),
   },
   optimization: {
     minimize: isDev ? false : true,
@@ -30,9 +30,12 @@ export const webpackConfig = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
-          presets: ["@babel/preset-env"],
+          presets: ['@babel/preset-env'],
+        },
+        resolve: {
+          fullySpecified: false,
         },
       },
     ],

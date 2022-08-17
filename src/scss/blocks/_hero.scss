@@ -1,0 +1,39 @@
+.hero {
+  @include wrapper;
+  padding-bottom: 50px;
+
+  @include tablet {
+    padding-top: 40px;
+    padding-bottom: 150px;
+  }
+}
+
+.hero__article {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 5px;
+  color: var(--s-gray);
+
+  span,
+  h1,
+  h2 {
+    margin: 0;
+    font-weight: 500;
+    // font-size: 58px;
+    font-size: clamp(pxToRem(14px), 2vw + 1rem, pxToRem(58px));
+    line-height: 130%;
+    transition: color 0.5s linear;
+  }
+
+  @include large {
+    column-gap: 32px;
+    row-gap: 22px;
+  }
+}
+
+#container {
+  max-width: 1000vw;
+  overflow: hidden;
+  font-size: 50px;
+}

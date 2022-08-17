@@ -1,0 +1,40 @@
+.mission {
+  @include wrapper;
+}
+
+.mission__text {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #b4b4b4;
+
+  h2 {
+    @include title;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 140%;
+  }
+}
+
+.mission__link {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  column-gap: 8px;
+  max-width: max-content;
+  margin-top: 200px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  color: var(--b-black);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: var(--s-light-green);
+  }
+}

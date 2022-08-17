@@ -4,11 +4,44 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--s-green);
+  outline-offset: 2px;
+}
+
 html {
   font-size: 16px;
 }
 
-// body {
-//   min-height: 100%;
-//   margin: 0 auto;
-// }
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.scroll-lock-ios {
+  position: fixed;
+
+  overflow: hidden;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}

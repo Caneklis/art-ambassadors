@@ -1,12 +1,21 @@
-@import "global/variables";
-@import "global/functions";
-@import "global/mixins";
-@import "global/fonts";
-@import "global/scafoldings";
+@import 'global/variables';
+@import 'global/functions';
+@import 'global/mixins';
+@import 'global/fonts';
+@import 'global/scafoldings';
 
-@import "blocks/page";
-@import "blocks/marquee";
-@import "blocks/start";
+@import 'blocks/page';
+@import 'blocks/header';
+@import 'blocks/main-nav';
+@import 'blocks/hero';
+@import 'blocks/promo';
+@import 'blocks/mission';
+@import 'blocks/news';
+@import 'blocks/tags';
+@import 'blocks/footer';
+// @import 'blocks/marquee';
+@import 'blocks/start';
+@import 'blocks/social';
 
 // @import "blocks/accordion.scss";
 // @import "blocks/data-accordion.scss";

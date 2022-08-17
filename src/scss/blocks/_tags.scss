@@ -1,0 +1,23 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  margin-right: 12px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 155%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--green {
+    color: var(--b-green);
+  }
+
+  &--yellow {
+    color: var(--b-yellow);
+  }
+}
