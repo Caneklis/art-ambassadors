@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "gsap": "^3.10.4",
-    "locomotive-scroll": "^4.1.4"
+    "imagesloaded": "^5.0.0",
+    "youtube-background": "^1.0.14"
   }
 }

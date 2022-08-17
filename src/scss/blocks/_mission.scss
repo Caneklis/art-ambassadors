@@ -1,5 +1,6 @@
 .mission {
   @include wrapper;
+  background-color: var(--b-light-gray);
 }
 
 .mission__text {

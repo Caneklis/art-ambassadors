@@ -17,12 +17,6 @@ const animateHeroBlock = () => {
     color: BLACK_COLOR,
     delay: 2,
     ease: Linear.easeNone,
-  });
-
-  gsap.to('.hero__article h2 span span', 1, {
-    color: GREEN_COLOR,
-    delay: 2,
-    ease: Linear.easeNone,
     onComplete: () => {
       const staggers = document.querySelectorAll('.stagger');
 

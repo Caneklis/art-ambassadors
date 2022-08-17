@@ -1,6 +1,8 @@
 .news {
   @include wrapper;
   padding-top: 50px;
+  background-color: var(--b-light-gray);
+  position: relative;
 }
 
 .news__head {

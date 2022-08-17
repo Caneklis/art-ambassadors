@@ -1,11 +1,12 @@
-import { gsap, Expo } from 'gsap';
-
+import { gsap, Expo, TweenMax, TweenLite, Power2 } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
+import imagesLoaded from 'imagesloaded';
 import { animateHeroBlock } from './hero.js';
-// import './sticky-header.js';
+import './sticky-header.js';
 import './grid-resizer.js';
 import './animate-news-list.js';
 import './main-nav.js';
+import 'youtube-background';
 
 if (
   document.readyState === 'interactive' ||
@@ -34,29 +35,80 @@ if (
     resolve();
     window.dispatchEvent(new Event('resize'));
 
-    const first = document.getElementById('first');
-    const second = document.getElementById('second');
-    const third = document.getElementById('third');
-    const fourth = document.getElementById('fourth');
-    const fifth = document.getElementById('fifth');
-    const container = document.getElementById('promo');
-    const rect = container.getBoundingClientRect();
+    gsap.registerPlugin(ScrollTrigger);
 
-    const animate = (element, position) => {
-      element.style.transform = `translateX(${position}px)`;
+    const images = gsap.utils.toArray('img');
+    const loader = document.querySelector('.loader--text');
+    const updateProgress = (instance) =>
+      (loader.textContent = `${Math.round(
+        (instance.progressedCount * 100) / images.length
+      )}%`);
+
+    const showDemo = () => {
+      document.body.style.overflow = 'auto';
+      document.scrollingElement.scrollTo(0, 0);
+      gsap.to(document.querySelector('.loader'), { autoAlpha: 0 });
+
+      gsap.utils.toArray('.promo__text-wrapper').forEach((section, index) => {
+        const w = section.querySelector('.promo__text-row');
+        const [x, xEnd] =
+          index % 2
+            ? ['100%', (w.scrollWidth - section.offsetWidth) * -1]
+            : [w.scrollWidth * -1, 0];
+        gsap.fromTo(
+          w,
+          { x },
+          {
+            x: xEnd,
+            scrollTrigger: {
+              trigger: section,
+              scrub: 0.5,
+            },
+          }
+        );
+      });
     };
 
-    document.addEventListener('scroll', function (e) {
-      const lastKnownScrollPosition = window.scrollY;
+    imagesLoaded(images).on('progress', updateProgress).on('always', showDemo);
 
-      window.requestAnimationFrame(function () {
-        animate(first, lastKnownScrollPosition * 0.3);
-        animate(second, lastKnownScrollPosition * -0.3);
-        animate(third, lastKnownScrollPosition * 0.3);
-        animate(fourth, lastKnownScrollPosition * -0.3);
-        animate(fifth, lastKnownScrollPosition * 0.3);
+    gsap.utils.toArray('.panel').forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: 'top top',
+        pin: true,
+        pinSpacing: false,
       });
     });
+
+    ScrollTrigger.create({
+      snap: false, // snap whole page to the closest section!
+    });
+
+    // const first = document.getElementById('first');
+    // const second = document.getElementById('second');
+    // const third = document.getElementById('third');
+    // const fourth = document.getElementById('fourth');
+    // const fifth = document.getElementById('fifth');
+    // const container = document.getElementById('promo');
+    // const rect = container.getBoundingClientRect();
+
+    // const animate = (element, position) => {
+    //   element.style.transform = `translateX(${position}px)`;
+    // };
+
+    // document.addEventListener('scroll', function (e) {
+    //   const lastKnownScrollPosition = window.scrollY;
+
+    //   window.requestAnimationFrame(function () {
+    //     animate(first, lastKnownScrollPosition * 0.3);
+    //     animate(second, lastKnownScrollPosition * -0.3);
+    //     animate(third, lastKnownScrollPosition * 0.3);
+    //     animate(fourth, lastKnownScrollPosition * -0.3);
+    //     animate(fifth, lastKnownScrollPosition * 0.3);
+    //   });
+    // });
+
+    new VideoBackgrounds('[data-vbg]');
 
     animateHeroBlock();
 

@@ -83,7 +83,7 @@
   }
 
   @include desktop {
-    font-size: 20px;
+    font-size: 16px;
     transition: color 0.5s ease;
 
     &:hover {
@@ -95,6 +95,10 @@
         color: var(--b-black);
       }
     }
+  }
+
+  @include fullhd {
+    font-size: 20px;
   }
 }
 

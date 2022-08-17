@@ -45,3 +45,13 @@ body {
   clip-path: inset(50%);
   margin: -1px;
 }
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  color: white;
+}
