@@ -1,0 +1,27 @@
+.section__wrapper {
+  @include wrapper;
+}
+
+.section__title {
+  @include section-title;
+}
+
+.section__head-text {
+  max-width: 820px;
+  margin-bottom: 80px;
+
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+
+    @include tablet {
+      font-size: 24px;
+    }
+  }
+
+  @include tablet {
+    margin-bottom: 110px;
+  }
+}

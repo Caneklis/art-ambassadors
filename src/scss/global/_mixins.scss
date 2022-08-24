@@ -69,3 +69,16 @@
   text-transform: uppercase;
   color: var(--s-green);
 }
+
+@mixin section-title {
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 130%;
+  color: var(--b-black);
+
+  @include tablet {
+    font-size: 64px;
+  }
+}

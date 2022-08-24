@@ -1,11 +1,11 @@
 import { gsap, Power4 } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 
-if (document.querySelector('.news__list')) {
+if (document.querySelector('.animate-card')) {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.set('.news__list-item', { autoAlpha: 0, y: 20 });
+  gsap.set('.animate-card', { autoAlpha: 0, y: 20 });
 
-  ScrollTrigger.batch('.news__list-item', {
+  ScrollTrigger.batch('.animate-card', {
     interval: 0.1,
     start: 'top bottom-=80px',
 

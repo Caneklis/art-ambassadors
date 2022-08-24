@@ -20,25 +20,28 @@
   @include list-reset;
   display: none;
 
-  &--open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    // top: 100%;
-    right: 0;
-    width: 100%;
-    padding-top: 100px;
-    background-color: var(--b-light-gray);
-    z-index: 9;
+  @media (max-width: 1023px) {
+    &--open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      left: 0;
+      top: 0;
+      // top: 100%;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      padding-top: 100px;
+      background-color: var(--b-light-gray);
+      z-index: 9;
+    }
   }
 
   @include large {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 0 !important;
   }
 }
 

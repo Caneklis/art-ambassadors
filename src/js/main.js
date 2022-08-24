@@ -4,7 +4,8 @@ import imagesLoaded from 'imagesloaded';
 import { animateHeroBlock } from './hero.js';
 import './sticky-header.js';
 import './grid-resizer.js';
-import './animate-news-list.js';
+// import './animate-news-list.js';
+import './animate-card.js';
 import './main-nav.js';
 import 'youtube-background';
 
@@ -39,37 +40,42 @@ if (
 
     const images = gsap.utils.toArray('img');
     const loader = document.querySelector('.loader--text');
-    const updateProgress = (instance) =>
-      (loader.textContent = `${Math.round(
-        (instance.progressedCount * 100) / images.length
-      )}%`);
 
-    const showDemo = () => {
-      document.body.style.overflow = 'auto';
-      document.scrollingElement.scrollTo(0, 0);
-      gsap.to(document.querySelector('.loader'), { autoAlpha: 0 });
+    if (loader) {
+      const updateProgress = (instance) =>
+        (loader.textContent = `${Math.round(
+          (instance.progressedCount * 100) / images.length
+        )}%`);
 
-      gsap.utils.toArray('.promo__text-wrapper').forEach((section, index) => {
-        const w = section.querySelector('.promo__text-row');
-        const [x, xEnd] =
-          index % 2
-            ? ['100%', (w.scrollWidth - section.offsetWidth) * -1]
-            : [w.scrollWidth * -1, 0];
-        gsap.fromTo(
-          w,
-          { x },
-          {
-            x: xEnd,
-            scrollTrigger: {
-              trigger: section,
-              scrub: 0.5,
-            },
-          }
-        );
-      });
-    };
+      const showDemo = () => {
+        document.body.style.overflow = 'auto';
+        document.scrollingElement.scrollTo(0, 0);
+        gsap.to(document.querySelector('.loader'), { autoAlpha: 0 });
 
-    imagesLoaded(images).on('progress', updateProgress).on('always', showDemo);
+        gsap.utils.toArray('.promo__text-wrapper').forEach((section, index) => {
+          const w = section.querySelector('.promo__text-row');
+          const [x, xEnd] =
+            index % 2
+              ? ['100%', (w.scrollWidth - section.offsetWidth) * -1]
+              : [w.scrollWidth * -1, 0];
+          gsap.fromTo(
+            w,
+            { x },
+            {
+              x: xEnd,
+              scrollTrigger: {
+                trigger: section,
+                scrub: 0.5,
+              },
+            }
+          );
+        });
+      };
+
+      imagesLoaded(images)
+        .on('progress', updateProgress)
+        .on('always', showDemo);
+    }
 
     gsap.utils.toArray('.panel').forEach((panel, i) => {
       ScrollTrigger.create({
@@ -110,7 +116,9 @@ if (
 
     new VideoBackgrounds('[data-vbg]');
 
-    animateHeroBlock();
+    if (document.querySelector('.hero')) {
+      animateHeroBlock();
+    }
 
     if (document.querySelector('.marquee')) {
       document.querySelectorAll('.marquee__part').forEach((element) => {
