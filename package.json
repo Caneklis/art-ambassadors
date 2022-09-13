@@ -46,8 +46,10 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "@fancyapps/ui": "^4.0.31",
     "gsap": "^3.10.4",
     "imagesloaded": "^5.0.0",
+    "swiper": "^8.3.2",
     "youtube-background": "^1.0.14"
   }
 }

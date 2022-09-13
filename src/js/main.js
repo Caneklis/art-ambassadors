@@ -8,6 +8,9 @@ import './grid-resizer.js';
 import './animate-card.js';
 import './main-nav.js';
 import 'youtube-background';
+import Swiper from 'swiper/bundle';
+import { Fancybox } from '@fancyapps/ui';
+import { initAccordions } from '../components/accordion/js/init-accordion.js';
 
 if (
   document.readyState === 'interactive' ||
@@ -244,6 +247,37 @@ if (
           .querySelector('.header__search-form')
           .classList.remove('is-active');
       }
+    });
+
+    initAccordions();
+
+    const swiper = new Swiper('.article__text-slider .swiper', {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        // when window width is >= 480px
+        768: {
+          slidesPerView: 'auto',
+          spaceBetween: 74,
+        },
+      },
+    });
+
+    Fancybox.bind('[data-fancybox]', {
+      // Your options go here
     });
   });
 }

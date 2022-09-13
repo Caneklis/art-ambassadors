@@ -1,0 +1,49 @@
+---
+title: Партнеры
+description: "Краткое описание раздела. Через консолидацию профессионалов Art Ambassadors создает платформу для диалога,
+рефлексии,эффективного взаимодействия, обмена опытом."
+og_url: "https://artambassadors.info/"
+og_image: "/images/share/1200_630_rus.png"
+twitter_summary:
+twitter_url: "https://twitter.com/ArtAmbassadors_"
+twitter_title: Art Ambassadors
+twitter_description: "Независимое децентрализованное сообщество профессионалов сферы искусства, в том числе
+арт-менеджеров, продюсеров проектов в сфере культуры, арт-предпринимателей, организаторов арт-событий, галеристов,
+арт-критиков, кураторов, исследователей современного художественного процесса журналистов, пишущих о культуре, а также
+специалистов по PR и цифровым технологиям в искусстве."
+twitter_image: "/images/share/1600_900_rus.png"
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<section class="partners  section">
+  <div class="section__wrapper">
+    <h1 class="section__title">{{title}}</h1>
+    <div class="section__head-text">
+      <p>{{description}}</p>
+    </div>
+
+    <ul class="partners__list">
+      {% for i in range(0, 10) -%}
+      <li class="partners__item  animate-card">
+        <a href="#">
+          <img src="/images/partners/logo-microsoft.svg" alt="">
+        </a>
+      </li>
+      <li class="partners__item  animate-card">
+        <a href="#">
+          <img src="/images/partners/logo-panasonic.svg" alt="">
+        </a>
+      </li>
+      <li class="partners__item  animate-card">
+        <a href="#">
+          <img src="/images/partners/logo-potanin-fond.svg" alt="">
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{% endblock %}

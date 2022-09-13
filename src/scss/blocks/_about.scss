@@ -1,0 +1,52 @@
+.about__list {
+  @include list-reset;
+}
+
+.about__item {
+  padding: 50px 0;
+  border-bottom: 1px solid #b4b4b4;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.about__article {
+  @include tablet {
+    @include grid-24;
+  }
+}
+
+.about__article-head {
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    /* identical to box height, or 34px */
+
+    text-transform: uppercase;
+
+    color: var(--s-green);
+  }
+
+  @include tablet {
+    grid-column: 1 / span 8;
+  }
+}
+
+.about__article-main-text {
+  p {
+    margin: 0;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include tablet {
+    grid-column: 11 / span 14;
+  }
+}

@@ -1,0 +1,68 @@
+.accordion {
+  display: grid;
+  row-gap: 38px;
+}
+
+.accordion__button {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 130%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  column-gap: 20px;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin-left: auto;
+    background-image: url("data:image/svg+xml,%3Csvg width='26' height='27' viewBox='0 0 26 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.001 2.5337C12.7855 2.5337 12.5789 2.61931 12.4265 2.77168C12.2741 2.92405 12.1885 3.13072 12.1885 3.3462L12.1885 22.5098L7.07628 17.396C7.00073 17.3204 6.91105 17.2605 6.81235 17.2196C6.71365 17.1787 6.60786 17.1577 6.50103 17.1577C6.39419 17.1577 6.2884 17.1787 6.1897 17.2196C6.091 17.2605 6.00132 17.3204 5.92578 17.396C5.85023 17.4715 5.79031 17.5612 5.74943 17.6599C5.70854 17.7586 5.6875 17.8644 5.6875 17.9712C5.6875 18.078 5.70854 18.1838 5.74943 18.2825C5.79031 18.3812 5.85023 18.4709 5.92578 18.5465L12.4258 25.0465C12.5012 25.1221 12.5909 25.1822 12.6896 25.2231C12.7883 25.2641 12.8942 25.2852 13.001 25.2852C13.1079 25.2852 13.2137 25.2641 13.3124 25.2231C13.4111 25.1822 13.5008 25.1221 13.5763 25.0465L20.0763 18.5465C20.1518 18.4709 20.2117 18.3812 20.2526 18.2825C20.2935 18.1838 20.3146 18.078 20.3146 17.9712C20.3146 17.8644 20.2935 17.7586 20.2526 17.6599C20.2117 17.5612 20.1518 17.4715 20.0763 17.396C20.0007 17.3204 19.9111 17.2605 19.8123 17.2196C19.7136 17.1787 19.6079 17.1577 19.501 17.1577C19.3942 17.1577 19.2884 17.1787 19.1897 17.2196C19.091 17.2605 19.0013 17.3204 18.9258 17.396L13.8135 22.5098L13.8135 3.3462C13.8135 3.13072 13.7279 2.92405 13.5756 2.77168C13.4232 2.61931 13.2165 2.5337 13.001 2.5337Z' fill='black'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s ease;
+  }
+}
+
+.accordion__element {
+  padding: 30px 0;
+  border-bottom: 1px solid #b4b4b4;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.is-active {
+    > .accordion__button {
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+.accordion__content {
+  p {
+    margin: 0;
+    margin-top: 8px;
+    font-size: 22px;
+    line-height: 155%;
+  }
+
+  .accordion__button {
+    border-bottom: none;
+    font-size: 24px;
+    padding-left: 30px;
+
+    + .accordion__content {
+      padding-left: 30px;
+    }
+  }
+}
