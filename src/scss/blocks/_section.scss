@@ -1,5 +1,50 @@
 .section__wrapper {
   @include wrapper;
+
+  @include desktop {
+    &--with-bg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 148px;
+      align-items: flex-end;
+
+      .section__head-text {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      .section__head-link {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+
+        margin-bottom: 110px;
+      }
+    }
+  }
+}
+
+.section__head-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  color: var(--base-black);
+  text-decoration: none;
+  background: var(--partners-card-bg);
+
+  @include desktop {
+    padding: 40px 74px 36px 74px;
+    font-size: 42px;
+    transition: background 0.4s ease-in-out;
+
+    &:hover {
+      background: var(--b-gray);
+    }
+  }
 }
 
 .section__title {

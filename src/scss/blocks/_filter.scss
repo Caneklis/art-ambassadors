@@ -1,0 +1,44 @@
+.filter__list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: 30px;
+
+  @include desktop {
+    column-gap: 60px;
+    border-bottom: 2px solid #dcdcdc;
+  }
+}
+
+.filter__item-link {
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 24px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #a2a2a2;
+  text-decoration: none;
+
+  &--active {
+    color: var(--b-black);
+  }
+
+  @include desktop {
+    margin-bottom: -2px;
+    border-bottom: 2px solid transparent;
+    font-size: 26px;
+    line-height: 30px;
+
+    sup {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    &--active {
+      border-bottom: 2px solid var(--b-black);
+    }
+  }
+}

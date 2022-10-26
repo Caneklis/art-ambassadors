@@ -1,0 +1,30 @@
+.suggest {
+  padding-top: 50px;
+
+  @include desktop {
+    padding-top: 150px;
+  }
+}
+
+.suggest__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  color: var(--base-black);
+  text-decoration: none;
+  background: var(--partners-card-bg);
+
+  @include desktop {
+    padding: 40px 74px 36px 74px;
+    font-size: 42px;
+    transition: background 0.4s ease-in-out;
+
+    &:hover {
+      background: var(--b-gray);
+    }
+  }
+}

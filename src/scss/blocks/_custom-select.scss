@@ -1,0 +1,66 @@
+.custom-select {
+  width: 100%;
+}
+
+.custom-select__text {
+  font-family: $b-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height, or 138% */
+
+  letter-spacing: 0.01em;
+
+  color: var(--b-black);
+}
+
+.custom-select__button {
+  height: 56px;
+  padding: 17px 30px 17px 17px;
+  background: #eaeaea;
+  border: none;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    border: none;
+  }
+}
+
+.custom-select__list {
+  max-height: 200px;
+  bottom: auto;
+  // top: 100%;
+  background: #eaeaea;
+  border: none;
+  transform: translateY(-2px);
+  border-top: 1px solid #d1d1d1;
+  border-radius: 0 0 4px 4px;
+}
+
+.custom-select__icon {
+  width: 10px;
+  height: 6px;
+}
+
+.custom-select__item {
+  padding-left: 17px;
+  padding-right: 17px;
+  line-height: 56px;
+
+  color: var(--b-black);
+
+  &:hover {
+    background: #dbdbdb;
+  }
+}
+
+.custom-select {
+  margin: 0;
+
+  .is-open {
+    .custom-select__list {
+    }
+  }
+}

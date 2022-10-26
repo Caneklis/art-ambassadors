@@ -1,0 +1,192 @@
+---
+title: Новости
+description: "Краткое описание раздела. Через консолидацию профессионалов Art Ambassadors создает платформу для диалога,
+рефлексии, эффективного взаимодействия, обмена опытом."
+og_url: "https://artambassadors.info/"
+og_image: "/images/share/1200_630_rus.png"
+twitter_summary:
+twitter_url: "https://twitter.com/ArtAmbassadors_"
+twitter_title: Art Ambassadors
+twitter_description: "Независимое децентрализованное сообщество профессионалов сферы искусства, в том числе
+арт-менеджеров, продюсеров проектов в сфере культуры, арт-предпринимателей, организаторов арт-событий, галеристов,
+арт-критиков, кураторов, исследователей современного художественного процесса журналистов, пишущих о культуре, а также
+специалистов по PR и цифровым технологиям в искусстве."
+twitter_image: "/images/share/1600_900_rus.png"
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<section class="news  news--page  section">
+  <div class="section__wrapper">
+    <h1 class="section__title">{{title}}</h1>
+    <div class="section__head-text">
+      <p>{{description}}</p>
+    </div>
+
+    <div class="news__page-container">
+      <div class="filter  news__filter">
+        <ul class="filter__list">
+          <li class="filter__list-item"><a class="filter__item-link  filter__item-link--active" href="#">Все
+              <sup>108</sup></a></li>
+          <li class="filter__list-item"><a class="filter__item-link" href="#">Выставка <sup>14</sup></a></li>
+          <li class="filter__list-item"><a class="filter__item-link" href="#">Вебинар <sup>4</sup></a></li>
+          <li class="filter__list-item"><a class="filter__item-link" href="#">Исследование <sup>2</sup></a></li>
+          <li class="filter__list-item"><a class="filter__item-link" href="#">Интервью <sup>7</sup></a></li>
+          <li class="filter__list-item"><a class="filter__item-link" href="#">Статья <sup>28</sup></a></li>
+          <li class="filter__list-item"><a class="filter__item-link" href="#">Опрос</a></li>
+        </ul>
+      </div>
+
+      <aside class="news__sidebar">
+        <div class="search">
+          <form class="search__form" action="" method="GET">
+            <input type="search">
+            <button type="submit">
+              <span class="visually-hidden">Найти</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <use href="/images/sprite_auto.svg#icon-search" />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <p class="news__sidebar-text">Фильтр по годам</p>
+        <div class="custom-select" data-select>
+          <span class="custom-select__label">Год</span>
+          <span class="custom-select__error">some-error</span>
+          <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
+            <span class="custom-select__text"></span>
+            <span class="custom-select__icon"></span>
+          </button>
+          <ul class="custom-select__list">
+            <li class="custom-select__item" tabindex="0" data-select-value="id-1">Все</li>
+            <li class="custom-select__item" tabindex="0" data-select-value="id-2">2022</li>
+            <li class="custom-select__item" tabindex="0" data-select-value="id-3">2021</li>
+            <li class="custom-select__item" tabindex="0" data-select-value="id-4">2020</li>
+          </ul>
+        </div>
+      </aside>
+
+      <ul class="news__list  news__list--full-page">
+        {% for i in range(0, 20) -%}
+        <li class="news__list-item  animate-card">
+          <article class="news__list-article">
+            <a href="news-item.html">
+              <img src="/images/news/news-pic-1.jpg" alt="Фотография к новости">
+              <div class="news__list-article-text">
+                <div class="news__tags"><span class="tag  tag--green">#выставка</span>
+                  <span class="tag  tag--yellow">#концептуализм</span>
+                </div>
+                <h3>Limna: Art advisory in your pocket advisory in your pocket</h3>
+                <p>Role of artificial intelligence for Limna. How it was created. Short description. How it was created
+                  and
+                  how does it
+                  operate today.</p>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="news__list-item  animate-card">
+          <article class="news__list-article">
+            <a href="news-item.html">
+              <img src="/images/news/news-pic-2.jpg" alt="Фотография к новости">
+              <div class="news__list-article-text">
+                <div class="news__tags"><span class="tag  tag--green">#выставка</span>
+                  <span class="tag  tag--yellow">#концептуализм</span>
+                </div>
+                <h3>Limna: Art advisory in your pocket advisory in your pocket</h3>
+                <p>Role of artificial intelligence for Limna. How it was created. Short description. How it was created
+                  and
+                  how does it
+                  operate today.</p>
+
+                <time datetime="2022-07-09T18:00:00">9 июня / 18.00</time>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="news__list-item  animate-card">
+          <article class="news__list-article">
+            <a href="news-item.html">
+              <img src="/images/news/news-pic-3.jpg" alt="Фотография к новости">
+              <div class="news__list-article-text">
+                <div class="news__tags"><span class="tag  tag--green">#выставка</span>
+                  <span class="tag  tag--yellow">#концептуализм</span>
+                </div>
+                <h3>Limna: Art advisory in your pocket advisory in your pocket</h3>
+                <p>Role of artificial intelligence for Limna. How it was created. Short description. How it was created
+                  and
+                  how does it
+                  operate today.Role of artificial intelligence for Limna. How it was created. Short description. How it
+                  was
+                  created
+                  and
+                  how does it
+                  operate today.</p>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="news__list-item  animate-card">
+          <article class="news__list-article">
+            <a href="news-item.html">
+              <img src="/images/news/news-pic-4.jpg" alt="Фотография к новости">
+              <div class="news__list-article-text">
+                <div class="news__tags"><span class="tag  tag--green">#выставка</span>
+                  <span class="tag  tag--yellow">#концептуализм</span>
+                </div>
+                <h3>Limna: Art advisory in your pocket advisory in your pocket</h3>
+                <p>Role of artificial intelligence for Limna. How it was created. Short description. How it was created
+                  and
+                  how does it
+                  operate today.</p>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="news__list-item  animate-card">
+          <article class="news__list-article">
+            <a href="news-item.html">
+              <img src="/images/news/news-pic-5.jpg" alt="Фотография к новости">
+              <div class="news__list-article-text">
+                <div class="news__tags"><span class="tag  tag--green">#опрос</span>
+                </div>
+                <h3>Limna: Art advisory in your pocket advisory in your pocket</h3>
+                <p>Role of artificial intelligence for Limna. How it was created and how does it operate today. How it
+                  was
+                  created and how does it operate today.</p>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="news__list-item  animate-card">
+          <article class="news__list-article">
+            <a href="news-item.html">
+              <img src="/images/news/news-pic-6.jpg" alt="Фотография к новости">
+              <div class="news__list-article-text">
+                <div class="news__tags"><span class="tag  tag--green">#open-call
+                    #блокчейн</span>
+                </div>
+                <h3>Limna: Art advisory in your pocket advisory in your pocket</h3>
+                <p>Role of artificial intelligence for Limna. How it was created. Short description. How it was created
+                  and
+                  how does it
+                  operate today.</p>
+              </div>
+            </a>
+          </article>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <div class="suggest">
+      <a class="suggest__link" href="#">Предложить свою новость <svg width="33" height="30" viewBox="0 0 33 30"
+             xmlns="http://www.w3.org/2000/svg">
+          <use href="/images/sprite_auto.svg#icon-top-right-arrow" />
+        </svg></a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

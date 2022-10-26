@@ -3,14 +3,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 import imagesLoaded from 'imagesloaded';
 import { animateHeroBlock } from './hero.js';
 import './sticky-header.js';
-import './grid-resizer.js';
+// import './grid-resizer.js';
 // import './animate-news-list.js';
 import './animate-card.js';
 import './main-nav.js';
 import 'youtube-background';
 import Swiper from 'swiper/bundle';
 import { Fancybox } from '@fancyapps/ui';
-import { initAccordions } from '../components/accordion/js/init-accordion.js';
+// import { initAccordions } from '../components/accordion/js/init-accordion.js';
+import '../components/custom-select/js/index';
+import '../components/accordion/js/index';
+import './contrast-switcher';
 
 if (
   document.readyState === 'interactive' ||
@@ -249,7 +252,7 @@ if (
       }
     });
 
-    initAccordions();
+    // initAccordions();
 
     const swiper = new Swiper('.article__text-slider .swiper', {
       pagination: {

@@ -1,0 +1,98 @@
+---
+title: Ошибка 404
+description: "Эта страница пока находится в разработке. Следите за нашими обновлениями!"
+og_url: "https://artambassadors.info/"
+og_image: "/images/share/1200_630_rus.png"
+twitter_summary:
+twitter_url: "https://twitter.com/ArtAmbassadors_"
+twitter_title: Art Ambassadors
+twitter_description: "Независимое децентрализованное сообщество профессионалов сферы искусства, в том числе
+арт-менеджеров, продюсеров проектов в сфере культуры, арт-предпринимателей, организаторов арт-событий, галеристов,
+арт-критиков, кураторов, исследователей современного художественного процесса журналистов, пишущих о культуре, а также
+специалистов по PR и цифровым технологиям в искусстве."
+twitter_image: "/images/share/1600_900_rus.png"
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<section class="partners  section">
+  <div class="section__wrapper  section__wrapper--with-btn">
+    <h1 class="section__title">{{title}}</h1>
+    <div class="section__head-text  ">
+      <p>{{description}}</p>
+    </div>
+
+    <a href="/" class="section__head-link">Вернуться назад <svg width="33" height="30" viewBox="0 0 33 30"
+           xmlns="http://www.w3.org/2000/svg">
+        <use href="/images/sprite_auto.svg#icon-top-right-arrow" />
+      </svg></a>
+  </div>
+</section>
+
+<section class="promo" id="promo">
+  <!-- <div class="content">
+          <img src="/images/promo.png" alt="">
+        </div> -->
+  <div>
+    <div class="promo__text-wrapper">
+      <div class="promo__text-row" id="first">
+        <span>методичность</span>
+        <span>созидание</span>
+        <img src="/images/promo/promo-pic-1.jpg" alt="">
+        <span>преумножение</span>
+        <span>перспектива</span>
+        <span>hope</span>
+        <span>aesthetics</span>
+      </div>
+    </div>
+    <div class="promo__text-wrapper">
+      <div class="promo__text-row" id="second">
+        <span>свобода</span>
+        <img src="/images/promo/promo-pic-2.jpg" alt="">
+        <span>уверенность</span>
+        <span>методичность</span>
+        <span>интеллигентность</span>
+        <span>Perspective</span>
+        <span>aesthetics</span>
+      </div>
+    </div>
+    <div class="promo__text-wrapper">
+      <div class="promo__text-row" id="third">
+        <span>методичность</span>
+        <span>созидание</span>
+        <span>искусство</span>
+        <span>ответственноость</span>
+        <img src="/images/promo/promo-pic-3.jpg" alt="">
+        <span>надежда</span>
+        <span>aesthetics</span>
+      </div>
+    </div>
+    <div class="promo__text-wrapper">
+      <div class="promo__text-row" id="fourth">
+        <span>осознанность</span>
+        <span>перспектива</span>
+        <img src="/images/promo/promo-pic-4.jpg" alt="">
+        <span>осознанность</span>
+        <span>вдохновение</span>
+        <span>уважение</span>
+        <span>Dialogue</span>
+        <span>aesthetics</span>
+      </div>
+    </div>
+    <div class="promo__text-wrapper">
+      <div class="promo__text-row" id="fifth">
+        <span>методичность</span>
+        <span>созидание</span>
+        <span>культура</span>
+        <span>эстетика</span>
+        <img src="/images/promo/promo-pic-5.jpg" alt="">
+        <span>надежда</span>
+        <span>развитие</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}

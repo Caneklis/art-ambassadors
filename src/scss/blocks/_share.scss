@@ -1,0 +1,17 @@
+.share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.share__title {
+  margin: 0;
+  margin-right: 32px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  /* or 25px */
+
+  color: #b5b5b5;
+}

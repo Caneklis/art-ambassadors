@@ -1,6 +1,6 @@
 @import '../../node_modules/swiper/swiper-bundle';
 @import '../../node_modules/@fancyapps/ui/dist/fancybox';
-@import '../components//accordion/style/data-accordion.scss';
+@import '../components/accordion/style/data-accordion.scss';
 @import 'global/variables';
 @import 'global/functions';
 @import 'global/mixins';
@@ -25,6 +25,13 @@
 @import 'blocks/article';
 @import 'blocks/accordion';
 @import 'blocks/about';
+@import 'blocks/search';
+@import 'blocks/filter';
+@import 'blocks/suggest';
+@import 'blocks/share';
+@import 'blocks/social-share';
+@import '../components/custom-select/style/custom-select';
+@import 'blocks/custom-select';
 
 // @import "blocks/accordion.scss";
 // @import "blocks/data-accordion.scss";

@@ -1,8 +1,14 @@
 .custom-select {
   position: relative;
 
-  width: 200px;
-  padding: 30px 0;
+  width: 300px;
+  padding: 14px 0 14px;
+  margin: 0 0 44px 0;
+
+  @media screen and (max-width: 767px) {
+    padding: 4px 0 14px;
+    width: 100%;
+  }
 
   &__label {
     position: absolute;
@@ -11,9 +17,13 @@
 
     transform: translateY(-50%);
 
-    transition: transform $trans--300, opacity $trans--300;
+    transition: transform 0.3s ease, opacity  0.3s ease;
 
     pointer-events: none;
+
+    @media screen and (max-width: 767px) {
+      transform: translateY(calc(-50% - 5px));
+    }
   }
 
   &__placeholder {
@@ -23,9 +33,13 @@
 
     transform: translateY(-50%);
 
-    transition: transform $trans--300, opacity $trans--300;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 
     pointer-events: none;
+
+    @media screen and (max-width: 767px) {
+      transform: translateY(calc(-50% - 5px));
+    }
   }
 
   select {
@@ -34,37 +48,49 @@
     width: 1px;
     height: 1px;
     margin: -1px;
+    padding: 0;
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    border: 0;
 
     clip: rect(0 0 0 0);
+    clip-path: inset(100%);
   }
 
   &__button {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 40px;
+    height: 48px;
     padding: 5px 10px;
 
-    background-color: $color-transparent;
-    border: 2px solid rgba($color-default-black, 0.2);
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     outline: none;
     cursor: pointer;
 
-    transition: border $trans--300;
+    transition: border 0.3s ease;
 
     &:hover {
-      border: 2px solid rgba($color-default-black, 0.5);
+      border: 2px solid rgba(0, 0, 0, 0.5);
     }
 
     &:focus {
-      border: 2px solid rgba($color-default-black, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.8);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.3;
     }
   }
 
   &__list {
     position: absolute;
-    bottom: 32px;
+    bottom: 10px;
     z-index: 1;
 
     width: 100%;
@@ -75,13 +101,13 @@
 
     list-style: none;
 
-    background-color: $color-default-white;
-    border: 2px solid $color-default-black;
+    background-color: #ffffff;
+    border: 2px solid #000000;
     transform: translateY(100%);
     visibility: hidden;
     opacity: 0;
 
-    transition: visibility $trans--300, opacity $trans--300;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
   }
 
   &__item {
@@ -90,15 +116,15 @@
     outline: none;
     cursor: pointer;
 
-    transition: background-color $trans--300;
+    transition: background-color 0.3s ease;
 
-    &[aria-selected='true'] {
-      background-color: $color-pink-swan;
+    &[aria-selected="true"] {
+      background-color: rgba(0, 0, 0, 0.2);
 
       @media (hover: hover), screen and (min-width: 0\0) {
         &:hover,
         &:focus {
-          background-color: $color-pink-swan;
+          background-color: rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -106,17 +132,17 @@
     @media (hover: hover), screen and (min-width: 0\0) {
       &:hover,
       &:focus {
-        background-color: $color-white-smoke;
+        background-color: rgba(0, 0, 0, 0.4);
       }
     }
   }
 
   &__error {
     position: absolute;
-    bottom: 0;
+    bottom: -15px;
     left: 0;
 
-    color: $color-fire-brick;
+    color: #ff1553;
 
     opacity: 0;
 
@@ -124,6 +150,8 @@
   }
 
   &__text {
+    font-size: 20px;
+    line-height: 24px;
     flex-shrink: 0;
     width: 80%;
     overflow: hidden;
@@ -134,7 +162,7 @@
 
     opacity: 0;
 
-    transition: opacity $trans--300 0.1s;
+    transition: opacity 0.3s ease 0.1s;
 
     br {
       display: none;
@@ -147,18 +175,26 @@
     height: 10px;
     margin-left: auto;
 
-    background-color: $color-default-black;
+    background-color: #000000;
 
-    transition: transform $trans--300;
+    transition: transform 0.3s ease;
 
     clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+
+    .custom-select__list {
+      display: none;
+    }
   }
 
   &.open-up {
     .custom-select__list {
       bottom: auto;
       top: 0;
-      transform: translateY(calc(-100% + 30px));
+      transform: translateY(calc(-100% + 10px));
     }
   }
 
@@ -197,16 +233,16 @@
     }
 
     .custom-select__button {
-      border: 2px solid $color-fire-brick;
+      border: 2px solid #ff1553;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba($color-fire-brick, 0.5);
+        border: 2px solid rgba(#ff1553, 0.5);
       }
     }
   }
 
-  &.is-valid {
+  /* &.is-valid {
     .custom-select__button {
       border: 2px solid $color-eucalyptus;
 
@@ -215,7 +251,7 @@
         border: 2px solid rgba($color-eucalyptus, 0.5);
       }
     }
-  }
+  } */
 
   &--placeholder {
     .custom-select__label {
