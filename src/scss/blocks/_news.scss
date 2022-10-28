@@ -37,6 +37,11 @@
   &:hover {
     color: var(--s-green);
   }
+
+  @include mobile {
+    margin-left: auto;
+    font-size: 18px;
+  }
 }
 
 .news__list {

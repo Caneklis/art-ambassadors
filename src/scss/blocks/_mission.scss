@@ -18,6 +18,12 @@
     font-size: 40px;
     line-height: 140%;
   }
+
+  @include mobile {
+    p {
+      font-size: 25px;
+    }
+  }
 }
 
 .mission__link {
@@ -37,5 +43,10 @@
 
   &:hover {
     color: var(--s-light-green);
+  }
+
+  @include mobile {
+    margin-top: 50px;
+    font-size: 20px;
   }
 }
