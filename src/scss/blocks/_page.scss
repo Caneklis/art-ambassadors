@@ -16,11 +16,11 @@
   // --partners-card-bg: #e8e8e8;
 
   @include desktop {
-    .header__contrast-active {
+    .contrast-version__active {
       display: block;
     }
 
-    .header__contrast-normal {
+    .contrast-version__normal {
       display: none;
     }
 
@@ -36,11 +36,11 @@
         transform: translate(0) !important;
       }
 
-      .header__contrast-active {
+      .contrast-version__active {
         display: none;
       }
 
-      .header__contrast-normal {
+      .contrast-version__normal {
         display: block;
       }
 
@@ -63,7 +63,7 @@
         width: 500px;
       }
 
-      .header__contrast {
+      .contrast-version {
         padding: 20px;
         margin-right: 50px;
         font-size: 30px;

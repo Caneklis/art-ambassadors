@@ -1,5 +1,5 @@
 const page = document.querySelector('.page');
-const btnSwitchTheme = document.querySelector('.header__contrast');
+const btnSwitchTheme = document.querySelectorAll('.contrast-version');
 
 let theme = 'light';
 
@@ -16,16 +16,18 @@ if (page.classList.contains('page--light')) {
 }
 
 if (btnSwitchTheme) {
-  btnSwitchTheme.addEventListener('click', function (e) {
-    e.preventDefault();
-    page.classList.toggle('page--dark');
+  btnSwitchTheme.forEach((element) => {
+    element.addEventListener('click', function (e) {
+      e.preventDefault();
+      page.classList.toggle('page--dark');
 
-    if (page.classList.contains('page--dark')) {
-      theme = 'dark';
-    } else {
-      page.classList.remove('page--dark');
-      theme = 'light';
-    }
-    localStorage.setItem('theme', theme);
+      if (page.classList.contains('page--dark')) {
+        theme = 'dark';
+      } else {
+        page.classList.remove('page--dark');
+        theme = 'light';
+      }
+      localStorage.setItem('theme', theme);
+    });
   });
 }

@@ -228,14 +228,17 @@ if (
     const searchFormToggle = document.querySelector('.header__search-btn');
     const searcForm = document.querySelector('.header__search');
 
-    searchFormToggle.addEventListener('click', () => {
-      let expanded = searchFormToggle.getAttribute('aria-expanded') === 'true';
-      searchFormToggle.setAttribute('aria-expanded', !expanded);
-      searchFormToggle.classList.add('search-form__toggle-btn--open');
-      searcForm
-        .querySelector('.header__search-form')
-        .classList.add('is-active');
-    });
+    if (searchFormToggle) {
+      searchFormToggle.addEventListener('click', () => {
+        let expanded =
+          searchFormToggle.getAttribute('aria-expanded') === 'true';
+        searchFormToggle.setAttribute('aria-expanded', !expanded);
+        searchFormToggle.classList.add('search-form__toggle-btn--open');
+        searcForm
+          .querySelector('.header__search-form')
+          .classList.add('is-active');
+      });
+    }
 
     document.addEventListener('click', function (e) {
       const target = e.target;
