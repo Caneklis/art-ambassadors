@@ -60,18 +60,42 @@
   }
 
   @include tablet {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 6.25%;
-    grid-row: 110px;
+    display: block;
+    width: 100%;
+    column-count: 2;
+    column-gap: 60px;
+
+    * {
+      break-inside: avoid;
+    }
+
+    .news__list-item {
+      margin-bottom: 60px;
+    }
   }
 
   @include desktop {
-    grid-template-columns: 1fr 1fr 1fr;
+    column-count: 3;
+    column-gap: 110px;
+
+    * {
+      break-inside: avoid;
+    }
+
+    .news__list-item {
+      margin-bottom: 110px;
+    }
 
     &--full-page {
       grid-column: 6 / span 19;
-      row-gap: 40px;
       column-gap: 36px;
+
+      .news__list-item {
+        margin-bottom: 40px;
+      }
+      // row-gap: 40px;
+      // // column-gap: 36px;
+      // gap: 110px;
     }
   }
 }

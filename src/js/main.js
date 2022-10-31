@@ -1,51 +1,48 @@
-import { gsap, Expo, TweenMax, TweenLite, Power2 } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
-import imagesLoaded from 'imagesloaded';
-import { animateHeroBlock } from './hero.js';
-import './sticky-header.js';
-// import './grid-resizer.js';
-// import './animate-news-list.js';
-import './animate-card.js';
-import './main-nav.js';
-import 'youtube-background';
-import Swiper from 'swiper/bundle';
-import { Fancybox } from '@fancyapps/ui';
-// import { initAccordions } from '../components/accordion/js/init-accordion.js';
-import '../components/custom-select/js/index';
-import '../components/accordion/js/index';
-import './contrast-switcher';
+import { gsap, Expo, TweenMax, TweenLite, Power2 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+import imagesLoaded from "imagesloaded";
+import { animateHeroBlock } from "./hero.js";
+import Swiper from "swiper/bundle";
+import { Fancybox } from "@fancyapps/ui";
+import "../components/custom-select/js/index";
+import "../components/accordion/js/index";
+import "./contrast-switcher";
+import "./sticky-header.js";
+import "./animate-card.js";
+import "./main-nav.js";
+import "youtube-background";
 
 if (
-  document.readyState === 'interactive' ||
-  document.readyState === 'complete'
+  document.readyState === "interactive" ||
+  document.readyState === "complete"
 ) {
   resolve();
 } else {
   const resolve = () => {
-    document.body.removeAttribute('unresolved');
+    document.body.removeAttribute("unresolved");
 
-    gsap.from('header', 1, {
+    gsap.from("header", 1, {
       opacity: 0,
       duration: 1,
-      ease: 'linear',
+      ease: "linear",
     });
 
-    gsap.from('.page__main', 1, {
+    gsap.from(".page__main", 1, {
       opacity: 0,
       duration: 2,
       delay: 1,
-      ease: 'linear',
+      ease: "linear",
     });
   };
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     resolve();
-    window.dispatchEvent(new Event('resize'));
+    window.dispatchEvent(new Event("resize"));
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const images = gsap.utils.toArray('img');
-    const loader = document.querySelector('.loader--text');
+    const images = gsap.utils.toArray("img");
+    const loader = document.querySelector(".loader--text");
 
     if (loader) {
       const updateProgress = (instance) =>
@@ -54,15 +51,15 @@ if (
         )}%`);
 
       const showDemo = () => {
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = "auto";
         document.scrollingElement.scrollTo(0, 0);
-        gsap.to(document.querySelector('.loader'), { autoAlpha: 0 });
+        gsap.to(document.querySelector(".loader"), { autoAlpha: 0 });
 
-        gsap.utils.toArray('.promo__text-wrapper').forEach((section, index) => {
-          const w = section.querySelector('.promo__text-row');
+        gsap.utils.toArray(".promo__text-wrapper").forEach((section, index) => {
+          const w = section.querySelector(".promo__text-row");
           const [x, xEnd] =
             index % 2
-              ? ['100%', (w.scrollWidth - section.offsetWidth) * -1]
+              ? ["100%", (w.scrollWidth - section.offsetWidth) * -1]
               : [w.scrollWidth * -1, 0];
           gsap.fromTo(
             w,
@@ -79,14 +76,14 @@ if (
       };
 
       imagesLoaded(images)
-        .on('progress', updateProgress)
-        .on('always', showDemo);
+        .on("progress", updateProgress)
+        .on("always", showDemo);
     }
 
-    gsap.utils.toArray('.panel').forEach((panel, i) => {
+    gsap.utils.toArray(".panel").forEach((panel, i) => {
       ScrollTrigger.create({
         trigger: panel,
-        start: 'top top',
+        start: "top top",
         pin: true,
         pinSpacing: false,
       });
@@ -120,14 +117,14 @@ if (
     //   });
     // });
 
-    new VideoBackgrounds('[data-vbg]');
+    new VideoBackgrounds("[data-vbg]");
 
-    if (document.querySelector('.hero')) {
+    if (document.querySelector(".hero")) {
       animateHeroBlock();
     }
 
-    if (document.querySelector('.marquee')) {
-      document.querySelectorAll('.marquee__part').forEach((element) => {
+    if (document.querySelector(".marquee")) {
+      document.querySelectorAll(".marquee__part").forEach((element) => {
         console.log(element);
         for (let i = 1; i <= 3; i++) {
           const newEl = element.cloneNode(true);
@@ -140,48 +137,48 @@ if (
       let isScrollingDown = true;
 
       let tween = gsap
-        .to('.marquee__part', {
+        .to(".marquee__part", {
           xPercent: -100,
           repeat: -1,
           duration: 20,
-          ease: 'linear',
+          ease: "linear",
         })
         .totalProgress(0.5);
 
       let tween1 = gsap
-        .to('.marquee__part-left', {
+        .to(".marquee__part-left", {
           xPercent: 100,
           repeat: -1,
           duration: 20,
-          ease: 'linear',
+          ease: "linear",
         })
         .totalProgress(0.5);
 
-      gsap.set('.marquee__inner', { xPercent: -50 });
+      gsap.set(".marquee__inner", { xPercent: -50 });
 
       gsap.fromTo(
-        '.start__logo',
+        ".start__logo",
         1,
         { ease: Expo.easeOuteaseOut, autoAlpha: 0, y: 40 },
         { autoAlpha: 1, y: 0 },
         0.8
       );
       gsap.fromTo(
-        '.start__text',
+        ".start__text",
         1,
         { ease: Expo.easeOuteaseOut, autoAlpha: 0, y: 60 },
         { autoAlpha: 1, y: 0 },
         1.2
       );
       gsap.fromTo(
-        '.start__info',
+        ".start__info",
         1,
         { ease: Expo.easeOuteaseOut, autoAlpha: 0, y: 80 },
         { autoAlpha: 1, y: 0 },
         1.4
       );
       gsap.fromTo(
-        '.marquee',
+        ".marquee",
         1,
         { ease: Expo.easeOuteaseOut, autoAlpha: 0 },
         { autoAlpha: 1 },
@@ -225,47 +222,47 @@ if (
     //   }
     // );
 
-    const searchFormToggle = document.querySelector('.header__search-btn');
-    const searcForm = document.querySelector('.header__search');
+    const searchFormToggle = document.querySelector(".header__search-btn");
+    const searcForm = document.querySelector(".header__search");
 
     if (searchFormToggle) {
-      searchFormToggle.addEventListener('click', () => {
+      searchFormToggle.addEventListener("click", () => {
         let expanded =
-          searchFormToggle.getAttribute('aria-expanded') === 'true';
-        searchFormToggle.setAttribute('aria-expanded', !expanded);
-        searchFormToggle.classList.add('search-form__toggle-btn--open');
+          searchFormToggle.getAttribute("aria-expanded") === "true";
+        searchFormToggle.setAttribute("aria-expanded", !expanded);
+        searchFormToggle.classList.add("search-form__toggle-btn--open");
         searcForm
-          .querySelector('.header__search-form')
-          .classList.add('is-active');
+          .querySelector(".header__search-form")
+          .classList.add("is-active");
       });
     }
 
-    document.addEventListener('click', function (e) {
+    document.addEventListener("click", function (e) {
       const target = e.target;
       const its_menu = target == searcForm || searcForm.contains(target);
       const menu_is_active = searcForm
-        .querySelector('.header__search-form')
-        .classList.contains('is-active');
+        .querySelector(".header__search-form")
+        .classList.contains("is-active");
 
       if (!its_menu && menu_is_active) {
-        searchFormToggle.classList.remove('search-form__toggle-btn--open');
+        searchFormToggle.classList.remove("search-form__toggle-btn--open");
         searcForm
-          .querySelector('.header__search-form')
-          .classList.remove('is-active');
+          .querySelector(".header__search-form")
+          .classList.remove("is-active");
       }
     });
 
     // initAccordions();
 
-    const swiper = new Swiper('.article__text-slider .swiper', {
+    const swiper = new Swiper(".article__text-slider .swiper", {
       pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
+        el: ".swiper-pagination",
+        type: "fraction",
       },
 
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
 
       breakpoints: {
@@ -276,14 +273,12 @@ if (
         },
         // when window width is >= 480px
         768: {
-          slidesPerView: 'auto',
+          slidesPerView: "auto",
           spaceBetween: 74,
         },
       },
     });
 
-    Fancybox.bind('[data-fancybox]', {
-      // Your options go here
-    });
+    Fancybox.bind("[data-fancybox]");
   });
 }
