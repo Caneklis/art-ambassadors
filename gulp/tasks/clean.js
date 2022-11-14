@@ -1,3 +1,3 @@
-import { deleteAsync } from 'del';
+import { deleteAsync } from "del";
 
-export const clean = () => deleteAsync(app.path.clean);
+export const clean = await deleteAsync("build");

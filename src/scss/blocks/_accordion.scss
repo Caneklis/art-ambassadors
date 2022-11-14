@@ -12,15 +12,16 @@
   padding: 0;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr min-content;
+  grid-template-columns: auto 26px;
   column-gap: 20px;
   align-items: center;
   width: 100%;
   text-align: left;
   cursor: pointer;
+  color: inherit;
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 26px;
     height: 26px;
@@ -51,10 +52,19 @@
 
 .accordion__content {
   p {
+    max-width: 280px;
     margin: 0;
     margin-top: 8px;
     font-size: 22px;
     line-height: 155%;
+
+    @include tablet {
+      max-width: 600px;
+    }
+
+    @include desktop {
+      max-width: max-content;
+    }
   }
 
   a {
